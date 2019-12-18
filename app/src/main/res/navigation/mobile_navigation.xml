@@ -4,12 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation.xml"
     app:startDestination="@id/destination_home_id_on_menu">
-
     <fragment
         android:id="@+id/destination_home_id_on_menu"
         android:name="com.gzeinnumer.navigationcomponentjetpackkt.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <!-- todo deeplink-->
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="https://www.gzeinnumer.com" />
+        <!-- todo deeplink-->
+    </fragment>
     <fragment
         android:id="@+id/destination_camera_id_on_menu"
         android:name="com.gzeinnumer.navigationcomponentjetpackkt.CameraFragment"
