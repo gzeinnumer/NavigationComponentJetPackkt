@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/destination_home_id_on_menu">
+
+    <fragment
+        android:id="@+id/destination_home_id_on_menu"
+        android:name="com.gzeinnumer.navigationcomponentjetpackkt.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/destination_camera_id_on_menu"
+        android:name="com.gzeinnumer.navigationcomponentjetpackkt.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" >
+        <action
+            android:id="@+id/next_action_to_photo"
+            app:destination="@id/destination_photo" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_photo"
+        android:name="com.gzeinnumer.navigationcomponentjetpackkt.PhotoFragment"
+        android:label="fragment_photo"
+        tools:layout="@layout/fragment_photo" >
+        <action
+            android:id="@+id/next_action_to_home"
+            app:destination="@id/destination_home_id_on_menu" />
+        <argument
+            android:name="numOfPhoto"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_settings_id_on_menu"
+        android:name="com.gzeinnumer.navigationcomponentjetpackkt.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+</navigation>
